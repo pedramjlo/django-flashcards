@@ -3,13 +3,28 @@
 
 {% block content %}
 
-<div class="home-container back">
-    
+<div class="home-container">
+
     {% if user.is_authenticated %} 
+
+    <span class="welcome-text">Welcome to my personal flashcard app project, {{ user.username }}</span> 
 
     {% else %}
 
+    <span class="welcome-text">Welcome to my personal flashcard app project</span>    
+
+    <div class="buttons-sect">
+        <button>login</button>
+        <button>signup</button>
+    </div>
+
+
     {% endif %}
+
+    <div class="homepage-illustration">
+        <img src="{% static 'images/Learning-amico.svg' %}" alt="">
+    </div>
+
 </div>
 
 
