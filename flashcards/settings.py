@@ -1,11 +1,12 @@
 from decouple import config
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# the secret key variable stored in a decoupled file ignored by git
 SECRET_KEY = config("SECRET_KEY")
 
 
@@ -15,7 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Built-in packages and 3rd party packages on top, the project's apps last 
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -25,6 +26,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+# the order of middlewares is crucial
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -36,12 +39,17 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
+# the main .url file provides the app with urls
 ROOT_URLCONF = "flashcards.urls"
 
+
+# setting a path for template dir due to using Dajngo template system rather than a separate front-end
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # telling the app where the required templates are
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -57,7 +65,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "flashcards.wsgi.application"
 
 
-# Database
+# Sqlite3 is the db used for this project
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
@@ -92,8 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+# using Iran time zone
+TIME_ZONE = 'Asia/Tehran' 
 
+
+# i18n == internationalisation (capable of using multiple languages)
 USE_I18N = True
 
 USE_TZ = True
