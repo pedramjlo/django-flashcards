@@ -3,5 +3,24 @@
 
 {% block content %}
 
+<div class="all-categories-container">
+
+    <div class="all-groups-title">
+        <h2>ALL GROUPS</h2>
+        <span id="category-count">{{ categories.count }} categories available</span>
+    </div>
+
+
+    <div class="category-section">
+        {% for category in categories %}
+            <div class="category-card">
+                <div class="category-color-square"></div>
+                <span>{{ category.title }}</span>
+                <span>has {{ category.flashcard_count }} items</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}
