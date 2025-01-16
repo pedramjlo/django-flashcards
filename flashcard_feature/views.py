@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Count
+from django.utils import timezone
 
 from django.views.generic import ListView
 
@@ -19,4 +20,5 @@ class AllCategoriesView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["flashcards"] = Flashcard.objects.all()
+        context["now"] = timezone.now()
         return context

@@ -11,11 +11,21 @@ body {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-style: normal;
+
+  padding-bottom: 10%;
 }
 
 a {
   text-decoration: none;
   color: white;
+}
+
+
+.split-line {
+  width: 90%;
+  border: 0.5px solid white;
+  box-shadow: #AEAEAE;
+  height: 0;
 }
 
 .home-container {
@@ -111,7 +121,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10vh;
+  gap: 7vh;
 }
 
 
@@ -127,42 +137,90 @@ a {
 }
 
 
+
 .category-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   justify-content: center;
   align-items: center;
   gap: 10vw;
 }
 
+
 .category-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  gap: 0.5vh;
+  gap: 2vh; 
 }
+
 
 .category-color-square {
   width: 8rem;
-  height: 8rem;
-  border: 0.5px solid red;
-  border-radius: 0.8rem;
-  margin-bottom: 5%;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.8rem; 
+  padding: 5%;
+  background: none; 
+  outline: none; 
+  border: none; 
+}
+
+#category-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.category-card-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+#category-card-date {
+  font-size: 0.8rem;
+  color: #AEAEAE;
+}
+
+#category-card-count {
+  color: black;
+
 }
 
 
 /* Small devices (up to 600px) */
 @media (max-width: 600px) {
-  
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vw;
+  }
 }
 
 /* Medium devices (601px to 768px) */
 @media (min-width: 601px) and (max-width: 768px) {
-  
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vw;
+  }
 }
 
 /* Large devices (769px and above) */
-@media (min-width: 769px) {
-  
+@media (min-width: 1400px) {
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vw;
+  }
 }
