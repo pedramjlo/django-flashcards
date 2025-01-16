@@ -173,7 +173,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 7vw;
-  margin-top: 3rem;
+
 }
 
 
@@ -193,6 +193,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border-radius: 0.8rem; 
   padding: 5%;
   background: none; 
