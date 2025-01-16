@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
 
     'user_account',
+    'flashcard_app',
 ]
 
 # the order of middlewares is crucial
