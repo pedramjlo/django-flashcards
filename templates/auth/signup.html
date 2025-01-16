@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="signup-container">
+    <h1>Signing up</h1>
+
+    <div class="signup-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">signup</button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}

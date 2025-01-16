@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+.helptext { display: none; }
+
+
 body {
   background-color: #002244;
   color: white;
@@ -83,6 +87,13 @@ a {
   font-size: 1rem;
 }
 
+.login-container, .signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 
 .login-container {
   display: flex;
@@ -98,27 +109,15 @@ a {
 
 /* Small devices (up to 600px) */
 @media (max-width: 600px) {
-  /* CSS rules for small devices */
-  .example-class {
-    font-size: 14px;
-    padding: 10px;
-  }
+  
 }
 
 /* Medium devices (601px to 768px) */
 @media (min-width: 601px) and (max-width: 768px) {
-  /* CSS rules for medium devices */
-  .example-class {
-    font-size: 16px;
-    padding: 15px;
-  }
+  
 }
 
 /* Large devices (769px and above) */
 @media (min-width: 769px) {
-  /* CSS rules for large devices */
-  .example-class {
-    font-size: 18px;
-    padding: 20px;
-  }
+  
 }
