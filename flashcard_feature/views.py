@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.utils import timezone
 
 from django.views.generic import ListView
@@ -14,7 +14,10 @@ class AllCategoriesView(ListView):
 
 
     def get_queryset(self): # Annotate the queryset with the count of related flashcards 
-        return Category.objects.annotate(flashcard_count=Count('flashcard'))
+        return Category.objects.annotate( 
+            flashcard_count=Count('flashcard'), 
+            learned_flashcard_count=Count('flashcard', filter=Q(flashcard__is_learned=True)))
+
 
 
     def get_context_data(self, **kwargs):

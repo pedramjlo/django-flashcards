@@ -140,10 +140,11 @@ a {
 
 .category-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-columns: repeat(4, 1fr); /* 4-column-grid */
   justify-content: center;
   align-items: center;
-  gap: 10vw;
+  gap: 7vw;
+  margin-top: 3rem;
 }
 
 
@@ -215,12 +216,6 @@ a {
 }
 
 /* Large devices (769px and above) */
-@media (min-width: 1400px) {
-  .category-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15vw;
-  }
+@media (min-width: 769px) {
+  
 }
