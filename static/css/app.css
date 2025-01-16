@@ -9,17 +9,25 @@ body {
   font-style: normal;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .home-container {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8vh;
-  padding: 6vh 3vw;
+  gap: 12vh;
+  padding: 12vh 3vw;
+
   
   font-size: 2rem;
   text-align: center;
   
 }
+
+
 
 .welcome-text {
   line-height: 6vh;
@@ -35,7 +43,7 @@ body {
 }
 
 .buttons-sect button {
-  height: 5vh;
+  height: 5.5vh;
   border-radius: 20px;
   color: #002244;
   font-size: 1.2rem;
@@ -49,9 +57,43 @@ body {
 
 
 .homepage-illustration {
+  margin-top: 10%;
 }
 
 
+
+/* AUTHENTICATED HOMEPAGE STYLING */
+.homepage-cards-conatiner {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+.home-container svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vh;
+  font-size: 1rem;
+}
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-container form input {
+  border-radius: 20px;
+}
 
 
 /* Small devices (up to 600px) */
