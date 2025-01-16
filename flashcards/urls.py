@@ -9,5 +9,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", HomeView.as_view(), name='home'),
     path("", include('user_account.urls')),
+    path("", include('flashcard_feature.urls')),
 
 ]
