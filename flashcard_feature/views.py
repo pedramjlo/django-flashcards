@@ -25,3 +25,10 @@ class AllCategoriesView(ListView):
         context["flashcards"] = Flashcard.objects.all()
         context["now"] = timezone.now()
         return context
+
+
+
+class AllFlashcardsView(ListView):
+    template_name = 'flashcards/all-flashcards.html'
+    model = Flashcard
+    context_object_name = 'flashcards'
