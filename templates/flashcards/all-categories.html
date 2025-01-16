@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 <div class="all-categories-container" style="margin-left: 5rem; margin-right: 5rem">
-
     <div class="all-groups-title">
         <h2>ALL CATEGORIES</h2>
         <span id="category-count">{{ categories.count }} categories available</span>
     </div>
-
     <div class="split-line"></div>
-
-    <div class="category-section" >
+    <div class="category-section">
         {% for category in categories %}
             <div class="category-card" data-color="{{ category.color|default:'white' }}">
                 <a href="#"><div class="category-color-square"><span style="color: black;">{{ category.flashcard_count }} items</span></div></a>
@@ -19,12 +15,24 @@
                     <a href="#"><span id="category-card-title">{{ category.title }}</span></a>
                     <span id="category-card-date">created {{ category.created_at|timesince:now }} ago</span>
                     <span style="color: green;">Learned: {{ category.learned_flashcard_count }}/{{ category.flashcard_count }}</span>
+                    {% if category.color == 'blue' %}
+                        <div class="circle blue"></div>
+                    {% elif category.color == 'red' %}
+                        <div class="circle red"></div>
+                    {% elif category.color == 'green' %}
+                        <div class="circle green"></div>
+                    {% elif category.color == 'yellow' %}
+                        <div class="circle yellow"></div>
+                    {% elif category.color == 'orange' %}
+                        <div class="circle orange"></div>
+                    {% elif category.color == 'purple' %}
+                        <div class="circle purple"></div>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
     </div>
 </div>
-
 <!-- Include the JavaScript file -->
 <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
