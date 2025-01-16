@@ -30,11 +30,11 @@ INSTALLED_APPS = [
 
 
     'user_account',
-    'flashcard_app',
+    'flashcard_feature',
 ]
 
-# the order of middlewares is crucial
 
+# the order of middlewares is crucial
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
