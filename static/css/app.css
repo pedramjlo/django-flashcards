@@ -153,6 +153,12 @@ a {
   gap: 7vh;
 }
 
+.all-flashcards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
 
 .all-groups-title {
   display: flex;
@@ -176,6 +182,15 @@ a {
 
 }
 
+.flashcard-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4-column-grid */
+  justify-content: center;
+  align-items: center;
+  gap: 7vw;
+
+}
+
 
 .category-card {
   display: flex;
@@ -184,6 +199,24 @@ a {
   align-items: center;
   text-align: center;
   gap: 2vh; 
+}
+
+.flashcard-card {
+  width: 10rem;
+  height: 8rem;
+  border-radius: 0.8rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 10%;
+  background-color: beige;
+  color: black;
+}
+
+#flashcard-front-title {
+  font-size: 1.5rem;
 }
 
 

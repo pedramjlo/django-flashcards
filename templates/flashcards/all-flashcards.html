@@ -5,11 +5,24 @@
 
 {% block content %}
 
-<div class="all-groups-container">
+<div class="all-flashcards-container" style="margin-left: 5rem; margin-right: 5rem">
     <div class="all-groups-title">
         <h2>ALL FLASHCARDS</h2>
         <span id="flashcards-count" style="color: yellow;">{{ flashcards.count }} flashcards available</span>
     </div>
+
+    <div class="split-line"></div>
+
+    <div class="flashcard-section">
+        {% for flashcard in flashcards %}
+            <div class="flashcard-card">
+                <span id="flashcard-front-title">{{ flashcard.front_title }}</span>
+                <div style="width: 90%; height: 0; background-color: black; border: 0.5px solid black;"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+
 </div>
 
 {% endblock %}
