@@ -20,11 +20,7 @@ a {
   color: white;
 }
 
-button {
-  background: none;
-  fill: none;
-  border: none;
-}
+
 
 .circle {
   width: 1rem;
@@ -197,6 +193,14 @@ button {
 
 }
 
+.flashcard-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
 
 .category-card {
   display: flex;
@@ -209,7 +213,7 @@ button {
 
 .flashcard {
   width: 10rem;
-  height: 8rem;
+  height: 6rem;
   border-radius: 0.8rem; 
 
   display: flex;
@@ -245,14 +249,17 @@ button {
 
 .back {
   transform: rotateY(180deg);
+  
 }
 
 .flashcard.flipped .front {
   transform: rotateY(180deg);  /* Rotate front face */
+  
 }
 
 .flashcard.flipped .back {
   transform: rotateY(0deg); /* Rotate back face */
+  height: auto;
 }
 
 
@@ -314,6 +321,12 @@ button {
 
 .pin-btn { background: none; border: none; cursor: pointer; }
 
+
+.card-options {
+  display: flex;
+  flex-direction: column;
+
+}
 
 /* Small devices (up to 600px) */
 @media (max-width: 600px) {
