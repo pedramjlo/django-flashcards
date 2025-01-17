@@ -20,6 +20,12 @@ a {
   color: white;
 }
 
+button {
+  background: none;
+  fill: none;
+  border: none;
+}
+
 .circle {
   width: 1rem;
   height: 1rem;
@@ -51,7 +57,7 @@ a {
 
 
 .split-line {
-  width: 90%;
+  width: 100%;
   border: 0.5px solid white;
   box-shadow: #AEAEAE;
   height: 0;
@@ -201,19 +207,62 @@ a {
   gap: 2vh; 
 }
 
-.flashcard-card {
+.flashcard {
   width: 10rem;
   height: 8rem;
   border-radius: 0.8rem; 
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 0.8rem;
+  text-align: center;
+  gap: 220px;
+
   padding: 10%;
   background-color: beige;
   color: black;
+  perspective: 1000px; /* Adds 3D perspective */
+  transform-style: preserve-3d;
+  transition: transform 0.5s; /* Smooth transition */
 }
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back face when flipped */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15%;
+}
+
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+  transform: rotateY(180deg);  /* Rotate front face */
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0deg); /* Rotate back face */
+}
+
+
+
+/* Ensure your titles and content are styled appropriately */
+#flashcard-front-title {
+  font-size: 1.5rem;
+}
+
+
 
 #flashcard-front-title {
   font-size: 1.5rem;
@@ -256,10 +305,27 @@ a {
 
 }
 
+.is_pinned { 
+  z-index: 1; 
+  position: absolute; 
+  top: 0.5rem; 
+  right: 0.5rem; 
+} 
+
+.pin-btn { background: none; border: none; cursor: pointer; }
+
 
 /* Small devices (up to 600px) */
 @media (max-width: 600px) {
   .category-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vw;
+  }
+
+  .flashcard-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -271,6 +337,14 @@ a {
 /* Medium devices (601px to 768px) */
 @media (min-width: 601px) and (max-width: 768px) {
   .category-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vw;
+  }
+
+  .flashcard-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
